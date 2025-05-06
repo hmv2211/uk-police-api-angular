@@ -9,6 +9,12 @@ A web app built with Angular that uses the UK Police API to view crime data and 
 
 ## Run Instructions
 1. Install dependencies:
-
+Run this in your terminal:
 ```bash
 npm install
+Run the app and start the Angular server:
+'''bash
+ng serve
+Visit:
+```bash
+http://localhost:4200
