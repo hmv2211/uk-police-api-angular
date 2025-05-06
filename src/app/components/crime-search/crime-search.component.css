@@ -1,0 +1,13 @@
+.crime-search {
+  margin-top: 20px;
+}
+
+.inputs label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
