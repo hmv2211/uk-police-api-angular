@@ -1,0 +1,26 @@
+<div class="crime-search">
+  <h2>Search Street-Level Crimes</h2>
+
+  <div class="inputs">
+    <label>Latitude:
+      <input [(ngModel)]="latitude" placeholder="e.g. 51.509" />
+    </label>
+
+    <label>Longitude:
+      <input [(ngModel)]="Longitude" placeholder="e.g. -0.118" />
+    </label>
+
+    <button (click)="fetchCrimes()">Search</button>
+  </div>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="crimes.length > 0">
+    <h3>Crimes Found: {{ crimes.length }}</h3>
+    <ul>
+      <li *ngFor="let crime of crimes">
+        <strong>{{ crime.category }}</strong> at {{ crime.location.street.name }}
+      </li>
+    </ul>
+  </div>
+</div>
