@@ -22,11 +22,11 @@
         },
         "serve": {
           "options": {
-            "browserTarget": "police-api-app:build"
+            "browserTarget": "uk-police-api-angular:build"
           }
         }
       }
     }
   },
-  "defaultProject": "police-api-app"
+  "defaultProject": "uk-police-api-angular"
 }
