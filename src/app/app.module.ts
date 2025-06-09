@@ -4,9 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CrimeSearchComponent } from './component/crime-search/crime-search.component';
+import { CrimeSearchComponent } from './components/crime-search/crime-search.component';
 
-@ngModule({
+@NgModule({
   declarations: [
     AppComponent,
     CrimeSearchComponent
