@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-crime-search',
-  templateURL: './crime-search.component.html',
+  templateUrl: './crime-search.component.html',
   styleUrls: ['./crime-search.component.css']
 })
 export class CrimeSearchComponent {
@@ -20,8 +20,8 @@ export class CrimeSearchComponent {
       return;
     }
 
-    const url = 'https://data.police.uk/api/crimes-street/all-crime?lat=${this.latitude}&lng${this.longitude}`;
-    this.http.get<any[]>(url).subscrive({
+    const url = `https://data.police.uk/api/crimes-street/all-crime?lat=${this.latitude}&lng${this.longitude}`;
+    this.http.get<any[]>(url).subscribe({
       next: data => {
         this.crimes = data;
         this.error = '';
