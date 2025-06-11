@@ -20,7 +20,7 @@ export class CrimeSearchComponent {
       return;
     }
 
-    const url = `https://data.police.uk/api/crimes-street/all-crime?lat=${this.latitude}&lng${this.longitude}`;
+    const url = `https://data.police.uk/api/crimes-street/all-crime?lat=${this.latitude}&lng=${this.longitude}`;
     this.http.get<any[]>(url).subscribe({
       next: data => {
         this.crimes = data;
