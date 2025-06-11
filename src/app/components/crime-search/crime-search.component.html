@@ -1,26 +1,32 @@
-<div class="crime-search">
-  <h2>Search Street-Level Crimes</h2>
+<div class="crime-search-container">
+  <h2>Search for Crimes by Location</h2>
 
-  <div class="inputs">
-    <label>Latitude:
-      <input [(ngModel)]="latitude" placeholder="e.g. 51.509" />
-    </label>
+  <form (ngSubmit)="fetchCrimes()">
+    <label for="latitude">Latitude:</label>
+    <input type="text" id="latitude" [(ngModel)]="latitude" name="latitude" required />
 
-    <label>Longitude:
-      <input [(ngModel)]="longitude" placeholder="e.g. -0.118" />
-    </label>
+    <label for="longitude">Longitude:</label>
+    <input type="text" id="longitude" [(ngModel)]="longitude" name="longitude" required />
 
-    <button (click)="fetchCrimes()">Search</button>
-  </div>
+    <button type="submit">Search</button>
+  </form>
 
-  <div *ngIf="error" class="error">{{ error }}</div>
+  <!-- Show error message -->
+  <p *ngIf="error" class="error">{{ error }}</p>
 
-  <div *ngIf="crimes.length > 0">
-    <h3>Crimes Found: {{ crimes.length }}</h3>
+  <!-- If crimes exist -->
+  <div *ngIf="crimes && crimes.length > 0; else noData">
+    <h3>Crimes Found:</h3>
     <ul>
       <li *ngFor="let crime of crimes">
-        <strong>{{ crime.category }}</strong> at {{ crime.location.street.name }}
+        <strong>{{ crime.category | titlecase }}</strong>
+        - {{ crime.location?.street?.name || 'Unknown Street' }}
       </li>
     </ul>
   </div>
+
+  <!-- If no crimes exist -->
+  <ng-template #noData>
+    <p *ngIf="!error">No crime data available for this location.</p>
+  </ng-template>
 </div>
