@@ -3,18 +3,30 @@
 
   <form (ngSubmit)="fetchCrimes()">
     <label for="latitude">Latitude:</label>
-    <input type="text" id="latitude" [(ngModel)]="latitude" name="latitude" required />
+    <input
+      type="text"
+      id="latitude"
+      [(ngModel)]="latitude"
+      name="latitude"
+      required
+    />
 
     <label for="longitude">Longitude:</label>
-    <input type="text" id="longitude" [(ngModel)]="longitude" name="longitude" required />
+    <input
+      type="text"
+      id="longitude"
+      [(ngModel)]="longitude"
+      name="longitude"
+      required
+    />
 
     <button type="submit">Search</button>
   </form>
 
-  <!-- Show error message -->
+  <!-- Show error message if API or input validation fails -->
   <p *ngIf="error" class="error">{{ error }}</p>
 
-  <!-- If crimes exist -->
+  <!-- Show crimes if they exist -->
   <div *ngIf="crimes && crimes.length > 0; else noData">
     <h3>Crimes Found:</h3>
     <ul>
@@ -25,7 +37,7 @@
     </ul>
   </div>
 
-  <!-- If no crimes exist -->
+  <!-- Message when no crimes are found and no error -->
   <ng-template #noData>
     <p *ngIf="!error">No crime data available for this location.</p>
   </ng-template>
