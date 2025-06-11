@@ -1,13 +1,21 @@
-.crime-search {
-  margin-top: 20px;
+.crime-search-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 1em;
 }
 
-.inputs label {
+label {
   display: block;
-  margin-bottom: 10px;
+  margin-top: 1em;
+}
+
+input, button {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.5em;
 }
 
 .error {
   color: red;
-  margin-top: 10px;
+  margin-top: 1em;
 }
