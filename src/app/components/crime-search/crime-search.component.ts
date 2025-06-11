@@ -17,6 +17,7 @@ export class CrimeSearchComponent {
   fetchCrimes() {
     if (!this.latitude || !this.longitude) {
       this.error = 'Please enter both latitude and longitude.';
+      this.crimes = [];
       return;
     }
 
