@@ -1,27 +1,30 @@
 <div class="crime-search-container">
   <h2>Search for Crimes by Location</h2>
 
-  <form (ngSubmit)="fetchCrimes()">
-    <label for="latitude">Latitude:</label>
-    <input
-      type="text"
-      id="latitude"
-      [(ngModel)]="latitude"
-      name="latitude"
-      required
-    />
+  <!-- ngIf wrapper to help Stackblitz rendering timing -->
+  <div *ngIf="true">
+    <form (ngSubmit)="fetchCrimes()">
+      <label for="latitude">Latitude:</label>
+      <input
+        type="text"
+        id="latitude"
+        [(ngModel)]="latitude"
+        name="latitude"
+        required
+      />
 
-    <label for="longitude">Longitude:</label>
-    <input
-      type="text"
-      id="longitude"
-      [(ngModel)]="longitude"
-      name="longitude"
-      required
-    />
+      <label for="longitude">Longitude:</label>
+      <input
+        type="text"
+        id="longitude"
+        [(ngModel)]="longitude"
+        name="longitude"
+        required
+      />
 
-    <button type="submit">Search</button>
-  </form>
+      <button type="submit">Search</button>
+    </form>
+  </div>
 
   <!-- Show error message if API or input validation fails -->
   <p *ngIf="error" class="error">{{ error }}</p>
